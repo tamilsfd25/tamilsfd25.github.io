@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil SFD 2025 - Software Freedom Day</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* --- DARK MODE (Default) --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background */
+            color: #ffffff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        /* Custom scrollbar style */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #ef4444; /* Red thumb */
+            border-radius: 4px;
+        }
+        .text-neon-red {
+            color: #ef4444; /* Tailwind red-500 equivalent */
+        }
+        .text-neon-yellow {
+            color: #fcd34d; /* Tailwind amber-300 equivalent */
+        }
+        .glow-shadow {
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- LIGHT MODE Overrides (Applied when <body> has the 'light' class) --- */
+        .light body {
+            background-color: #f3f4f6 !important; /* Light background */
+            color: #1f2937 !important; /* Dark text */
+        }
+        .light .bg-gray-900 { background-color: #e5e7eb !important; } /* Header and Invitation BG */
+        .light .bg-gray-800\/50 { background-color: rgba(255, 255, 255, 0.8) !important; } /* Hero BG */
+        .light .bg-gray-800 { background-color: #ffffff !important; } /* Card BG */
+        .light .text-neon-red { color: #b91c1c !important; } /* Darker Red accent */
+        .light .text-neon-yellow { color: #4b5563 !important; } /* Grayed-out accent */
+        .light .text-white { color: #1f2937 !important; } /* White text becomes dark */
+        .light .text-white\/90 { color: #374151 !important; }
+        .light .text-gray-300 { color: #4b5563 !important; }
+        .light .border-red-500\/20 { border-color: rgba(185, 28, 28, 0.5) !important; }
+        .light .border-white\/10 { border-color: rgba(0, 0, 0, 0.1) !important; }
+        .light .bg-red-800\/20 { background-color: rgba(185, 28, 28, 0.1) !important; }
+        .light .glow-shadow { box-shadow: 0 0 10px rgba(185, 28, 28, 0.2); }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <header class="bg-gray-900 border-b border-red-500/30 p-4 sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            
+            <!-- Title -->
+            <div class="flex items-center space-x-2">
+                <a href="index.html">
+                <h1 class="text-2xl font-extrabold text-neon-red tracking-wider">
+                    தமிழ் SFD <span class="text-white">2025</span>
+                </h1></a>
+            </div>
+
+            <!-- Theme Toggle and Details Button Group -->
+            <div class="flex items-center space-x-4">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" onclick="toggleTheme()" class="p-2 rounded-full text-white/90 hover:bg-gray-700 light:text-gray-700 light:hover:bg-gray-200 transition duration-300 focus:outline-none">
+                    <!-- Moon icon (Default: Dark Mode) -->
+                    <svg id="moon-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <!-- Sun icon (Hidden by default) -->
+                    <svg id="sun-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </button>
+                
+                <!-- Details Button -->
+                <a href="#" onclick="scrollToSection('call-for-participation'); return false;" class="px-3 py-1 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition duration-300 shadow-lg">
+                    விவரங்கள்
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4 md:p-8">
+
+        <!-- Hero Section -->
+        <section class="text-center py-16 md:py-24 bg-gray-800/50 rounded-xl mb-12 border border-red-500/20 glow-shadow">
+            <p class="text-lg md:text-xl text-neon-yellow mb-2 font-semibold">மென்பொருள் சுதந்திர தினம் / Software Freedom Day</p>
+            <h2 class="text-5xl md:text-7xl font-black text-white leading-tight">
+                Tamil SFD <span class="text-neon-red">2025</span>
+            </h2>
+            <div class="mt-8 space-y-4 md:space-y-0 md:flex justify-center md:space-x-12">
+                <div class="flex items-center justify-center space-x-2 text-white/90">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-2xl font-bold">8, 9 Nov 2025</span>
+                </div>
+                <div class="flex items-center justify-center space-x-2 text-white/90">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 104 14h12a1 1 0 00.707-1.707L14 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+                    </svg>
+                    <span class="text-2xl font-bold">Online / இணையவழி</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theme and Core Info Section -->
+        <section id="details-section" class="grid md:grid-cols-2 gap-8 mb-12">
+            
+            <!-- Theme Card -->
+            <div class="p-6 bg-gray-800 rounded-xl border border-red-500/20">
+                <h3 class="text-2xl font-bold text-neon-red mb-3 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M16 7a2 2 0 00-2-2h-2.343M16 7a2 2 0 00-2-2h-2.343" />
+                    </svg>
+                    Theme / கருப்பொருள்
+                </h3>
+                <p class="text-xl text-white font-medium mb-2">Celebrating and Spreading Awareness of Open Source Software in Tamil</p>
+                <p class="text-xl text-neon-yellow font-medium">தமிழில் திறந்த மூல மென்பொருளின் விழிப்புணர்வைக் கொண்டாடுதல் மற்றும் பரப்புதல்</p>
+            </div>
+
+            <!-- Program Card -->
+            <div class="p-6 bg-gray-800 rounded-xl border border-red-500/20">
+                <h3 class="text-2xl font-bold text-neon-red mb-3 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Program / நிகழ்ச்சி விவரம்
+                </h3>
+                <ul class="list-disc list-inside text-white/90 text-lg space-y-1 ml-4">
+                    <li>Talks (பேச்சுகள்)</li>
+                    <li>Workshops (பயிலரங்கு)</li>
+                    <li>Hackathon (நிரலாக்கப்போட்டி)</li>
+                    <li>And more! (மேலும் பல!)</li>
+                </ul>
+                <p class="mt-4 text-green-400 font-semibold">Entry is free for everyone (அனைவருக்கும் நுழைவு இலவசம்)</p>
+            </div>
+        </section>
+
+        <!-- Main Invitation Text (Bilingual) -->
+        <section class="grid lg:grid-cols-2 gap-8 mb-12">
+            
+            <!-- English Invitation -->
+            <div class="p-6 bg-gray-900 rounded-xl shadow-2xl border border-white/10">
+                <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">Invitation (English)</h3>
+                <p class="text-gray-300 mb-4">
+                    Hi All,
+                    We are happy to invite you all to the SFD (Software Freedom Day) celebration for the year 2025 in the name of <b class="text-white">Tamil SFD 2025</b>.
+                </p>
+                <p class="text-gray-300 mb-4">
+                    We are celebrating this event to promote the awareness of FOSS especially focused on Tamil speaking audience this time. We have talks, workshops, hackathon etc for this event. 
+                </p>
+                <p class="text-gray-300 mb-4">
+                    We are inviting all FOSS groups and LUGs communities and people to participate and celebrate this event together. We would like your participation and support to make Tamil SFD 2025 a memorable event.
+                </p>
+                <p class="text-red-400 font-medium mb-4">
+                    We are late for SFD this time but that didn’t stop our passion for it. 
+                </p>
+                <p class="text-gray-300">
+                    The <b class="text-red-400">Call for Talks, Workshops and Hackathon</b> are out already and further events if planned will be posted in this thread and thus this thread will act as the main entry point for information.
+                </p>
+                <p class="mt-6 text-white font-semibold">Thanks and Regards,</p>
+                <p class="text-neon-red font-semibold">Tamil Open Source Ethusiasts</p>
+            </div>
+
+            <!-- Tamil Invitation -->
+            <div class="p-6 bg-gray-900 rounded-xl shadow-2xl border border-white/10">
+                <h3 class="text-2xl font-bold text-white mb-4 border-b border-gray-700 pb-2">அழைப்பிதழ் (தமிழ்)</h3>
+                <p class="text-gray-300 mb-4">
+                    அனைவருக்கும் வணக்கம்,
+                    <b class="text-white">தமிழ் SFD 2025</b> என்ற பெயரில் 2025 ஆம் ஆண்டுக்கான SFD (மென்பொருள் சுதந்திர தினம்) கொண்டாட்டத்திற்கு உங்கள் அனைவரையும் அழைப்பதில் நாங்கள் மகிழ்ச்சியடைகிறோம்.
+                </p>
+                <p class="text-gray-300 mb-4">
+                    இந்த முறை தமிழ் பேசும் பார்வையாளர்களை மையமாகக் கொண்ட FOSS பற்றிய விழிப்புணர்வை ஊக்குவிப்பதற்காக இந்த நிகழ்வை நாங்கள் கொண்டாடுகிறோம். இந்த நிகழ்விற்காக பேச்சுகள், பயிலரங்கு, நிரலாக்கப்போட்டி போன்றவை நடத்துகிறோம்.
+                </p>
+                <p class="text-gray-300 mb-4">
+                    அனைத்து FOSS குழுக்கள் மற்றும் LUGs சமூகங்கள் மற்றும் மக்களையும் இந்த நிகழ்வில் பங்கேற்று ஒன்றாகக் கொண்டாட அழைக்கிறோம். தமிழ் SFD 2025 ஐ ஒரு மறக்கமுடியாத நிகழ்வாக மாற்ற உங்கள் பங்கேற்பையும் ஆதரவையும் நாங்கள் விரும்புகிறோம்.
+                </p>
+                <p class="text-red-400 font-medium mb-4">
+                    இந்த முறை SFD க்கு நாங்கள் தாமதமாக வந்தோம், ஆனால் அது எங்கள் ஆர்வத்தை நிறுத்தவில்லை.
+                </p>
+                <p class="text-gray-300">
+                    பேச்சுக்கள், பட்டறைகள் மற்றும் நிரலாக்கப்போட்டிக்கான அழைப்பு ஏற்கனவே வெளியிடப்பட்டுள்ளது, மேலும் திட்டமிடப்பட்டிருந்தால் மேலும் நிகழ்வுகள் இந்த திரியில் இடுகையிடப்படும், எனவே இந்த திரி தகவலுக்கான முக்கிய நுழைவுப் புள்ளியாகச் செயல்படும்.
+                </p>
+                <p class="mt-6 text-white font-semibold">நன்றி,</p>
+                <p class="text-neon-red font-semibold">தமிழ் திறந்த மூல ஆர்வலர்கள்</p>
+            </div>
+        </section>
+
+        <!-- Call for Participation/Updates -->
+        <section id="call-for-participation" class="text-center p-8 bg-red-800/20 rounded-xl border-l-4 border-red-500 mb-12">
+            <h3 class="text-3xl font-bold text-red-400 mb-2">Call for Participation!</h3>
+            <p class="text-xl bg-grey-900 font-medium mb-4"> talks, workshops and hackathon are out already! <br/>
+                (பேச்சுகள், பயிலரங்கு மற்றும் நிரலாக்கப்போட்டிக்கான அழைப்பு ஏற்கனவே வெளியிடப்பட்டுள்ளது!)
+            </p>
+            <!-- RESTORING THE FORUM LINK AND TEXT HERE AS REQUESTED BY THE USER IN THE FIRST STEP -->
+            <div class="mt-6 space-y-7">
+                <span class="block bg-grey-900 font-medium text-lg md:text-xl">
+                    (This forum thread acts as the main entry point for information / தகவலுக்கான முக்கிய நுழைவுப் புள்ளியாகச் செயல்படும்)
+                </span>
+                <a href="https://forums.tamillinuxcommunity.org/t/tamil-sfd-2025-invitation-for-everyone-sfd-2025/3155" target="_blank" class="inline-block text-red-400 hover:text-red-300 font-bold underline text-lg break-all p-2 rounded transition">
+                    https://forums.tamillinuxcommunity.org/t/tamil-sfd-2025-invitation-for-everyone-sfd-2025/3155
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-6 mb-6">
+                <div>
+                    <a href="talks.html" class="flex items-center justify-center px-10 py-5 bg-red-600 hover:bg-red-700 bg-grey-900 font-medium rounded-lg transition duration-300 shadow-lg min-h-[80px]">
+                        Talks (பேச்சுரைகள்)
+                    </a>
+                </div>
+                <div>
+                    <a href="hackathon.html" class="flex items-center justify-center px-10 py-5 bg-red-600 hover:bg-red-700 bg-grey-900 font-medium rounded-lg transition duration-300 shadow-lg min-h-[80px]">
+                        Hackathons (நிரலாக்கப்போட்டி)
+                    </a>
+                </div>
+                <div>
+                    <a href="workshops.html" class="flex items-center justify-center px-10 py-5 bg-red-600 hover:bg-red-700 bg-grey-900 font-medium rounded-lg transition duration-300 shadow-lg min-h-[80px]">
+                        Workshops (பயிலரங்கு)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section (Updated) -->
+        <section id="contact-section" class="p-6 bg-gray-800 rounded-xl border border-red-500/20">
+            <h3 class="text-2xl font-bold text-white mb-6 text-center">For queries please contact / விசாரணைகளுக்கு தொடர்பு கொள்ளவும்</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+
+                <!-- Contact 1: Vivekanandan KS (Telegram) -->
+                <div class="bg-gray-900 p-4 rounded-lg border border-red-500/10 transition duration-300 hover:border-red-500">
+                    <p class="text-lg font-bold text-neon-yellow mb-1">Vivekanandan KS</p>
+                    <a href="https://t.me/vivekanandanks" target="_blank" class="inline-flex items-center space-x-2 text-white/90 hover:text-red-400">
+                        <!-- Telegram Icon -->
+                        <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current">
+                            <path d="M22.000 3.750 L0.999 10.375 C-0.125 10.835 -0.364 11.594 0.446 11.979 L5.000 13.999 L18.000 5.000 L8.999 15.999 L13.625 18.000 C14.281 18.281 14.625 18.281 15.000 17.625 L23.000 4.750 C23.656 4.094 23.313 3.438 22.000 3.750 Z"/>
+                        </svg>
+                        <span class="font-semibold">@vivekanandanks</span>
+                    </a>
+                </div>
+
+                <!-- Contact 2: Balakrishnan (Phone) -->
+                <div class="bg-gray-900 p-4 rounded-lg border border-red-500/10 transition duration-300 hover:border-red-500">
+                    <p class="text-lg font-bold text-neon-yellow mb-1">Balakrishnan</p>
+                    <a href="tel:+919176437631" class="inline-flex items-center space-x-2 text-white/90 hover:text-red-400">
+                        <!-- Phone Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 3.184c.11.45.054.908-.15 1.255l-1.63 2.015a11.972 11.972 0 005.106 5.106l2.015-1.63c.347-.204.805-.26 1.255-.15l3.184.74A1 1 0 0118 16.847V18a1 1 0 01-1 1H3a1 1 0 01-1-1v-14z"/>
+                        </svg>
+                        <span class="font-semibold">+91 91764 37631</span>
+                    </a>
+                </div>
+
+                <!-- Contact 3: Official Telegram Group -->
+                <div class="bg-gray-900 p-4 rounded-lg border border-red-500/10 transition duration-300 hover:border-red-500">
+                    <p class="text-lg font-bold text-neon-yellow mb-1">Official Group / குழு</p>
+                    <a href="https://t.me/sfd2025planning" target="_blank" class="inline-flex items-center space-x-2 text-white/90 hover:text-red-400">
+                        <!-- Telegram Icon -->
+                        <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current">
+                            <path d="M22.000 3.750 L0.999 10.375 C-0.125 10.835 -0.364 11.594 0.446 11.979 L5.000 13.999 L18.000 5.000 L8.999 15.999 L13.625 18.000 C14.281 18.281 14.625 18.281 15.000 17.625 L23.000 4.750 C23.656 4.094 23.313 3.438 22.000 3.750 Z"/>
+                        </svg>
+                        <span class="font-semibold">@sfd2025planning</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- REMOVED THE FORUM LINK AND TEXT FROM THE CONTACT SECTION AS REQUESTED -->
+        </section>
+        
+    </main>
+
+    <!-- New JavaScript for reliable scrolling and Theme Toggle -->
+    <script>
+        // Runs immediately after the script is parsed to set the theme before body content loads
+        loadTheme(); 
+
+        /**
+         * Function to handle reliable smooth scrolling using scrollIntoView.
+         * @param {string} id - The ID of the target section to scroll to.
+         */
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                // Using 'start' ensures the top of the element is aligned with the top of the viewport.
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        
+        /**
+         * Updates the visibility of the sun/moon icons based on the current theme.
+         * @param {boolean} isLight - True if the light theme is active.
+         */
+        function updateThemeIcons(isLight) {
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+            
+            if (sunIcon && moonIcon) {
+                sunIcon.classList.toggle('hidden', !isLight);
+                moonIcon.classList.toggle('hidden', isLight);
+            }
+        }
+
+        /**
+         * Loads the theme preference from localStorage on page load.
+         */
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            // If theme is not set, default to 'dark'. If set to 'light', switch.
+            const isLight = savedTheme === 'light';
+            
+            if (isLight) {
+                document.body.classList.add('light');
+            } else {
+                // Ensure dark mode is the default and saved if no preference is found
+                localStorage.setItem('theme', 'dark');
+            }
+
+            // Update icons immediately
+            updateThemeIcons(isLight);
+        }
+
+        /**
+         * Toggles the theme, updates the body class, and saves the preference to localStorage.
+         */
+        function toggleTheme() {
+            // Toggles the 'light' class and returns true if the class is now present (i.e., we switched to light mode)
+            const isLight = document.body.classList.toggle('light');
+            
+            if (isLight) {
+                localStorage.setItem('theme', 'light');
+            } else {
+                localStorage.setItem('theme', 'dark');
+            }
+            updateThemeIcons(isLight);
+        }
+    </script>
+
+    <footer class="mt-12 py-4 bg-gray-900 border-t border-red-500/30 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Tamil SFD. Organized by Tamil Open Source Enthusiasts. All rights reserved.</p>
+        <p>இணைய பக்கத்தின் மூல நிரல் <a href="https://github.com/vivekanandan-ks/tamil-sfd-2025" style="text-decoration: underline">இங்கே</a> கொடுக்கப்பட்டுள்ளன.</p>
+    </footer>
+
+</body>
+</html>

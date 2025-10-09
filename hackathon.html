@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil SFD 2025 - Software Freedom Day</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* --- DARK MODE (Default) --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background */
+            color: #ffffff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        /* Custom scrollbar style */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #ef4444; /* Red thumb */
+            border-radius: 4px;
+        }
+        .text-neon-red {
+            color: #ef4444; /* Tailwind red-500 equivalent */
+        }
+        .text-neon-yellow {
+            color: #fcd34d; /* Tailwind amber-300 equivalent */
+        }
+        .glow-shadow {
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- LIGHT MODE Overrides (Applied when <body> has the 'light' class) --- */
+        .light body {
+            background-color: #f3f4f6 !important; /* Light background */
+            color: #1f2937 !important; /* Dark text */
+        }
+        .light .bg-gray-900 { background-color: #e5e7eb !important; } /* Header and Invitation BG */
+        .light .bg-gray-800\/50 { background-color: rgba(255, 255, 255, 0.8) !important; } /* Hero BG */
+        .light .bg-gray-800 { background-color: #ffffff !important; } /* Card BG */
+        .light .text-neon-red { color: #b91c1c !important; } /* Darker Red accent */
+        .light .text-neon-yellow { color: #4b5563 !important; } /* Grayed-out accent */
+        .light .text-white { color: #1f2937 !important; } /* White text becomes dark */
+        .light .text-white\/90 { color: #374151 !important; }
+        .light .text-gray-300 { color: #4b5563 !important; }
+        .light .border-red-500\/20 { border-color: rgba(185, 28, 28, 0.5) !important; }
+        .light .border-white\/10 { border-color: rgba(0, 0, 0, 0.1) !important; }
+        .light .bg-red-800\/20 { background-color: rgba(185, 28, 28, 0.1) !important; }
+        .light .glow-shadow { box-shadow: 0 0 10px rgba(185, 28, 28, 0.2); }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <header class="bg-gray-900 border-b border-red-500/30 p-4 sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            
+            <!-- Title -->
+            <div class="flex items-center space-x-2">
+                <a href="index.html">
+                <h1 class="text-2xl font-extrabold text-neon-red tracking-wider">
+                    தமிழ் SFD <span class="text-white">2025</span>
+                </h1></a>
+            </div>
+
+            <!-- Theme Toggle and Details Button Group -->
+            <div class="flex items-center space-x-4">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" onclick="toggleTheme()" class="p-2 rounded-full text-white/90 hover:bg-gray-700 light:text-gray-700 light:hover:bg-gray-200 transition duration-300 focus:outline-none">
+                    <!-- Moon icon (Default: Dark Mode) -->
+                    <svg id="moon-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <!-- Sun icon (Hidden by default) -->
+                    <svg id="sun-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </button>
+                
+                <!-- Details Button -->
+                <a href="#" onclick="scrollToSection('call-for-participation'); return false;" class="px-3 py-1 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition duration-300 shadow-lg">
+                    விவரங்கள்
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4 md:p-8">
+
+        <!-- Hero Section -->
+        <section class="text-center py-16 md:py-24 bg-gray-800/50 rounded-xl mb-12 border border-red-500/20 glow-shadow">
+            <p class="text-lg md:text-xl text-neon-yellow mb-2 font-semibold">மென்பொருள் சுதந்திர தினம் / Software Freedom Day</p>
+            <h2 class="text-5xl md:text-7xl font-black text-white leading-tight">
+                Hackathon  நிரலாக்கப்போட்டி 
+            </h2>
+                    <span class="text-2xl text-white font-bold">Online / இணையவழி</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theme and Core Info Section -->
+        <section id="details-section" class="grid md:grid-rows gap-12 mb-12">
+            
+            
+            <div class="p-6 bg-gray-800 rounded-xl border border-red-500/20 text-center">
+            <b class="text-lg md:text-xl text-white mb-4 font-semibold">Tholkappiam to Python code</b>
+            <p class="text-white">kanchilug / TamilRulepy</p>
+            </div>
+
+            <!-- Program Card -->
+            <div class="p-6 bg-gray-800 rounded-xl border border-red-500/20 text-center">
+                <b class="text-lg md:text-xl text-white mb-4 font-semibold">EBook to Read the Docs or Pandoc</b>
+                <p class="text-white">Convert epub files to static HTML sites </p>
+                <p class="text-white">Issue #70 · KaniyamFoundation/ProjectIdeas</p>
+            </div>
+
+            <div class="p-6 bg-gray-800 rounded-xl border border-red-500/20 text-center">
+                 <b class="text-lg md:text-xl text-white mb-4 font-semibold">Tamil Corpus Download</b>
+                 <p class="text-white">Catalogue and collect all public domain Tamil corpus and it on github and archive.org</p>
+                 <p class="text-white">Issue #21 · KaniyamFoundation/ProjectIdeas · GitHub</p>
+            </div>
+
+            <div class="p-6 bg-gray-800 rounded-xl border border-red-500/20 text-center">
+                 <b class="text-lg md:text-xl text-white mb-4 font-semibold">Hand writing recognition for tamil</b>
+                 <p class="text-white">Hand writing recognition for tamil</p>
+                 <p class="text-white">Issue #22 · KaniyamFoundation/ProjectIdeas</p>
+            </div>
+
+            <div class="p-6 bg-gray-800 rounded-xl border border-red-500/20 text-center">
+                <b class="text-lg md:text-xl text-white mb-4 font-semibold">Beej's Book Translation in Tamil</b>
+                <p class="text-white">Translate Beej’s Guides (Tech books) to tamil</p>
+                <p class="text-white">Issue #218 · KaniyamFoundation/ProjectIdeas</p>
+            </div>
+
+            <div class="p-6 bg-gray-800 rounded-xl border border-red-500/20 text-center">
+                <b class="text-lg md:text-xl text-white mb-4 font-semibold">Url Monitor</b>
+                <p class="text-white">send alerts on domain expiry via telegram, whatsapp, email to the exisitng project</p>
+                <p class="text-white">KaniyamFoundation/url-monitor</p>
+            </div>
+
+            <div class="p-6 bg-gray-800 rounded-xl border border-red-500/20 text-center">
+                <b class="text-lg md:text-xl text-white mb-4 font-semibold">add tamil jokes to pyjoke library</b>
+                <p class="text-white">Issue #202 · KaniyamFoundation/ProjectIdeas</p>
+            </div>
+
+            <div class="p-6 bg-gray-800 rounded-xl border border-red-500/20 text-center mb-8">
+                <b class="text-lg md:text-xl text-white mb-4 font-semibold">Download old tamil books from google books and upload to archive.org</b>
+                <p class="text-white">Download old tamil books from google books and upload to archive.org</p> 
+                <p class="text-white">Issue #200 · KaniyamFoundation/ProjectIdeas</p>
+            </div>
+        </section>
+
+        <section id="instruction-section" class="text-center py-16 md:py-24 bg-gray-800/50 rounded-xl mb-2 border border-red-500/20 glow-shadow">
+            <h1 class="text-lg md:text-xl text-neon-yellow mb-4 font-semibold">Click the button below, and reply your name, email and phone number in discourse forum for hackathon participation.</h1>
+            <h1 class="text-lg md:text-xl text-white mb-16 font-semibold">நீங்கள் பங்குபெற வேண்டுமென்றால், லிங்கை கிளிக் செய்து, போரமில் உங்கள் பெயர், மின்னஞ்சல், தொலைபேசி எண்னை பதில் அளிக்கவும்.</h1>
+            <a href="https://forums.tamillinuxcommunity.org/t/tamil-sfd-2025-hackathon/3152" class="px-10 py-5 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition duration-300 shadow-lg mt-56">
+                    Click here
+            </a>
+        </section>
+        
+    </main>
+
+    <!-- New JavaScript for reliable scrolling and Theme Toggle -->
+    <script>
+        // Runs immediately after the script is parsed to set the theme before body content loads
+        loadTheme(); 
+
+        /**
+         * Function to handle reliable smooth scrolling using scrollIntoView.
+         * @param {string} id - The ID of the target section to scroll to.
+         */
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                // Using 'start' ensures the top of the element is aligned with the top of the viewport.
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        
+        /**
+         * Updates the visibility of the sun/moon icons based on the current theme.
+         * @param {boolean} isLight - True if the light theme is active.
+         */
+        function updateThemeIcons(isLight) {
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+            
+            if (sunIcon && moonIcon) {
+                sunIcon.classList.toggle('hidden', !isLight);
+                moonIcon.classList.toggle('hidden', isLight);
+            }
+        }
+
+        /**
+         * Loads the theme preference from localStorage on page load.
+         */
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            // If theme is not set, default to 'dark'. If set to 'light', switch.
+            const isLight = savedTheme === 'light';
+            
+            if (isLight) {
+                document.body.classList.add('light');
+            } else {
+                // Ensure dark mode is the default and saved if no preference is found
+                localStorage.setItem('theme', 'dark');
+            }
+
+            // Update icons immediately
+            updateThemeIcons(isLight);
+        }
+
+        /**
+         * Toggles the theme, updates the body class, and saves the preference to localStorage.
+         */
+        function toggleTheme() {
+            // Toggles the 'light' class and returns true if the class is now present (i.e., we switched to light mode)
+            const isLight = document.body.classList.toggle('light');
+            
+            if (isLight) {
+                localStorage.setItem('theme', 'light');
+            } else {
+                localStorage.setItem('theme', 'dark');
+            }
+            updateThemeIcons(isLight);
+        }
+    </script>
+
+    <footer class="mt-12 py-4 bg-gray-900 border-t border-red-500/30 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Tamil SFD. Organized by Tamil Open Source Enthusiasts. All rights reserved.</p>
+        <p>இணைய பக்கத்தின் மூல நிரல் <a href="https://github.com/vivekanandan-ks/tamil-sfd-2025" style="text-decoration: underline">இங்கே</a> கொடுக்கப்பட்டுள்ளன.</p>
+    </footer>
+
+</body>
+</html>
