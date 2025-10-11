@@ -205,15 +205,30 @@
 
         <section x-data="fetchData()">
             <template x-for="talk in talklist">
-                <div class="talk-card text-center py-16 md:py-24 bg-gray-800/50 rounded-xl mb-2 border border-red-500/20 glow-shadow">
-                    <h1 x-text="talk.title"></h1>
-                    <h1 x-text="talk.description"></h1>
-                    <h1 x-text="talk.speaker"></h1>
-                    <h1 x-text="talk.duration"></h1>
-                    <h1 x-text="talk.target_audience"></h1>
-                    <h1 x-text="talk.time"></h1>
+                <div
+                    class="talk-card bg-gray-800/70 backdrop-blur-md rounded-2xl border border-red-500/40 shadow-lg shadow-red-900/30 mb-5 p-6 hover:scale-[1.02] transition-transform duration-200 ease-out">
+                    <div class="grid grid-cols-6 gap-6 items-center text-gray-100">
+                        <!-- Time Block -->
+                        <div
+                            class="col-span-1 flex flex-col items-center justify-center bg-red-600/90 rounded-xl py-5 text-center font-bold text-lg text-white shadow-md shadow-red-900/40">
+                            <span x-text="talk.time" class="tracking-wider"></span>
+                        </div>
+
+                        <!-- Content Block -->
+                        <div class="col-span-5 space-y-2">
+                            <h2 x-text="talk.title" class="text-2xl font-bold text-red-300 tracking-tight"></h2>
+                            <p x-text="talk.description" class="text-base text-gray-200 leading-relaxed"></p>
+                            <div class="flex flex-wrap gap-x-6 gap-y-2 text-lg text-gray-300 mt-2 font-medium">
+                                <span class="flex items-center gap-2">
+                                    🎤 <span x-text="talk.speaker"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </template>
+
+
         </section>
 
     </main>
