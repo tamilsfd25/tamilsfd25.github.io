@@ -1,3 +1,9 @@
 [
-    
+    {
+        "sno":"#0",
+        "title": "Guide to use open-source LLMs using Ollama",
+        "description": "Discover how to harness the power of large language models right on your machine. This talk is a practical guide to installing and running open-source LLMs locally using the user-friendly Ollama platform. உங்கள் கணினியிலேயே பெரிய மொழி மாதிரிகளின் (LLMs) ஆற்றலை எப்படிப் பயன்படுத்துவது என்று கண்டறியலாம். பயனர்-நட்புக் கருவியான Ollama-வைப் பயன்படுத்தி, திறந்த மூல LLM-களை நிறுவி, இயக்குவதற்கான நடைமுறை வழிகாட்டி தான் இந்த உரை.",
+        "speaker": "Varun M (வருண் மு)",
+        "time":"5:00 PM -<br> 5:30 PM"
+    }
 ]
