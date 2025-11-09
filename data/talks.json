@@ -4,7 +4,7 @@
         "title": "Guide to use open-source LLMs using Ollama",
         "description": "Discover how to harness the power of large language models right on your machine. This talk is a practical guide to installing and running open-source LLMs locally using the user-friendly Ollama platform. உங்கள் கணினியிலேயே பெரிய மொழி மாதிரிகளின் (LLMs) ஆற்றலை எப்படிப் பயன்படுத்துவது என்று கண்டறியலாம். பயனர்-நட்புக் கருவியான Ollama-வைப் பயன்படுத்தி, திறந்த மூல LLM-களை நிறுவி, இயக்குவதற்கான நடைமுறை வழிகாட்டி தான் இந்த உரை.",
         "speaker": "Varun M (வருண் மு)",
-        "image_path": "./speakerspics/varun_m.jpg"
+        "image_path": "./data/speakerspics/varun_m.jpg"
     },
 
     {
@@ -12,7 +12,7 @@
         "title": "கோலேங் (Golang) பயன்படுத்தி இணைய படிவம் உருவாக்குதல்",
         "description": "கோலேங் பயன்படுத்தி எப்படி நாங்கள் ஒரு சிரிய இணைய படிவத்தை உருவாக்கினோம் என்பதை விளக்கமாக இந்த உரையில் தெரிந்து கொள்ளலாம்",
         "speaker": "Mohan Raman(மோகன் ராமன்)",
-        "image_path": "./speakerspics/mohan_raman.jpg"
+        "image_path": "./data/speakerspics/mohan_raman.jpg"
     },
 
     {
@@ -20,7 +20,7 @@
         "title": "Jquery vs Alpine JS - இருவேறு ஜாவாஸ்கிரிப்டு நூலகங்களின் பயன்பாடு ஒரு ஒப்பீடு",
         "description": "JQuery - பல வருடங்களாக பயனர் இடைமுக நிரலாக்கத்தில் மிகுந்த ஆதிக்கம் செலுத்திவரும் ஒரு திற மூலநூலகம். Alpine JS - நவீன ஜாவாஸ்கிரிப்டு யுகத்தில் சிறிய அளவில் இருக்கும் HTML நிரலில் Declarative முறையில் பயனர் இடைமுகத்தில் மாற்றங்களை தரும் ஒரு திறமூல நூலகம்.",
         "speaker": "Hariharan Umapathi (ஹரிஹரன் உமாபதி)",
-        "image_path": "./speakerspics/hariharan_umapathi.jpg"
+        "image_path": "./data/speakerspics/hariharan_umapathi.jpg"
     },
 
     {
@@ -28,6 +28,6 @@
         "title": "Introduction and Overview for Fediverse platforms",
         "description": "This quick talk will help you with the understanding and get started with the fediverse of platforms from mastodon, pixelfed, lemmy, peertube etc. This will also cover the importance of federated, decentralized, self hostable ways to help in digital soverreignity.",
         "speaker": "Vivekanandan KS",
-        "image_path": "./speakerspics/vivekanandan_ks.jpg"
+        "image_path": "./data/speakerspics/vivekanandan_ks.jpg"
     }
 ]
